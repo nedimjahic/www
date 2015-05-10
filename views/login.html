@@ -1,0 +1,9 @@
+<hr>
+<form name="loginForm">
+	<label for="email">Username</label>
+	<input ng-model="user.email" type="text" id="email" required>
+	<label for="password">Password</label>
+	<input ng-model="user.password" type="password" id="password" required>
+
+</form>
+<button class="button expand" ng-disabled="!loginForm.$valid" ng-click="login()">Log in</button>

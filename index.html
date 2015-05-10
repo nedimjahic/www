@@ -1,0 +1,119 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>Social Stream</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/foundation/css/foundation.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+
+    <!-- endbuild -->
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+
+  </head>
+  <body ng-app="SocialStreamApp">
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+<div >
+
+
+    <div class="off-canvas-wrap">
+        <div class="inner-wrap">
+            <nav class="tab-bar">
+
+                <section class="left-small">
+                    <!-- <a class="fa fa-refresh refresh-icon" href="#/" ng-click="reload()"><span></span></a> -->
+                </section>
+                <section class="middle tab-bar-section">
+                    <h1 class="title">{{title}}</h1>
+                </section>
+
+                <section class="right-small">
+                    <a class="right-off-canvas-toggle menu-icon" ><span></span></a>
+                </section>
+
+            </nav>
+
+            <aside class="right-off-canvas-menu">
+                <ul class="off-canvas-list">
+                    <li><a href="#/" ng-click="showStream()">Stream</a></li>
+                    <li><a href="#/" ng-click="showArchive()">Archive</a></li>
+                    <li><a href="#/settings">Settings</a></li>
+                    <li><a href="#/login" ng-click="logout()">Log out</a></li>
+                </ul>
+            </aside>
+            <section class="main-section">
+                <div class="small-12 columns">
+                    <ng-view></ng-view>
+                </div>
+            </section>
+
+            <a class="exit-off-canvas"></a>
+        </div>
+    </div>
+</div>
+
+
+   
+
+
+
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-foundation/mm-foundation-tpls.js"></script>
+    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="bower_components/restangular/dist/restangular.js"></script>
+    <script src="bower_components/fastclick/lib/fastclick.js"></script>
+    <script src="bower_components/jquery.cookie/jquery.cookie.js"></script>
+    <script src="bower_components/jquery-placeholder/jquery.placeholder.js"></script>
+    <script src="bower_components/foundation/js/foundation.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+        <!-- build:js({app,.tmp}) scripts/main.js -->
+        <script src="scripts/main.js"></script>
+        <script src="scripts/constants.js"></script>
+
+        
+
+        <script src="scripts/controllers/streamCtrl.js"></script>
+        <script src="scripts/controllers/settingsCtrl.js"></script>
+        <script src="scripts/controllers/loginCtrl.js"></script>
+
+        <script src="scripts/services/authenticationService.js"></script>
+        <script src="scripts/services/socialStreamServices.js"></script>
+
+        <script src="scripts/directives/post.js"></script>
+
+
+
+        <!-- endbuild -->
+</body>
+</html>

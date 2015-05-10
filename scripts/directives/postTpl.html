@@ -1,0 +1,65 @@
+<div class="ss-post">
+	
+	<div class="post-header">
+		<div class="avatar">
+			<img ng-src="{{post.avatar}}" />
+		</div>
+		<div class="heading">
+			<div class="name">
+				<span>{{post.fullname}}</span>
+				<span ng-show="{{post.username && post.fullname}}">&nbsp;</span>
+				<span class="username">@{{post.username}}</span>
+			</div>
+			<div class="timestamp">{{post.timestamp | date:'medium'}}</div>
+		</div>
+	</div>
+
+	<div class="post-content">
+		<p>
+			{{post.text}}
+		</p>
+		<div class="image" ng-hide="{{!post.image}}">
+			<img ng-src="{{post.image}}">
+		</div>
+	</div>	
+	<div class="post-footer">
+		<div class="source-icon">
+			<span ng-show="{{post.source === 'twitter'}}">
+				<span>Via: &nbsp;</span>
+				<i class="fa fa-twitter"></i>
+				<span>Twitter</span>
+			</span>
+			<span ng-show="{{post.source === 'facebook'}}">
+				<span>Via: &nbsp;</span>
+				<i class="fa fa-facebook"></i>
+				<span>Facebook</span>
+			</span>
+			<span ng-show="{{post.source === 'instagram'}}">
+				<span>Via: &nbsp;</span>
+				<i class="fa fa-instagram"></i>
+				<span>Instagram</span>
+			</span>
+		</div>
+		<ul class="button-group">
+			<li>
+				<a href="#/" ng-click="block(post)" class="button small">
+					<i class="fa fa-times"></i>
+					<span>Block</span>
+				</a>
+			</li>
+			<li>
+				<a href="#/" ng-click="allow(post)"  class="button small">
+					<i class="fa fa-check"></i>
+					<span>Allow</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	
+	<div class="post-state" ng-show="{{post.state != 'unprocessed'}}">
+		<span class="label" ng-class="{'alert': post.state == 'blocked', 'success': post.state == 'allowed'}">
+			{{post.state}}
+		</span>
+	</div>
+</div>
+

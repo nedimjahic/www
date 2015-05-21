@@ -1,22 +1,23 @@
 angular.module('SocialStreamApp')
-.factory('authenticationService', ['$http', '$timeout',
-    function ($http, $timeout) {
+.factory('authenticationService', ['$http', '$timeout', '$rootScope',
+    function ($http, $timeout, $rootScope) {
 
         var user = {};
 
         var loggedIn = false;
 
-        var url = 'http://188.166.17.106:3000/api/users/login';
+        var url = 'http://localhost:3000/api/users/login';
 
         var login = function(user, callback) {
                     console.log('login');
                     $http.post(url + '?email=' +  user.email + '&password=' + user.password)
                     .then(function(result){
                         if(result.status === 200){
-							console.log(user.email+user.password);
+							              console.log(user.email+user.password);
                             if(result.data != ' '){
+                                console.log('result.data: ', result.data);
+                                $rootScope.user = result.data;
                                 user = result.data;
-                                console.log(user);
                                 loggedIn = true;
                                 callback();
                             }
@@ -24,7 +25,7 @@ angular.module('SocialStreamApp')
                                 console.log('Authentication failed.');
                                 loggedIn = false;
                             }
-                        }                
+                        }
                     });
                 };
 

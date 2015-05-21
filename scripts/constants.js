@@ -2,7 +2,7 @@
 
 angular.module('SocialStreamApp')
 
-.constant('host', '188.166.17.106')
+.constant('host', 'localhost')
 
 .constant('postStates', {
 	unprocessed: 0,

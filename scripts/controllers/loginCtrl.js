@@ -7,8 +7,8 @@ angular.module('SocialStreamApp')
           $rootScope.title = 'Log in';
 
           $scope.user = {
-          	email: 'henrik',
-          	password: 'quantumleap'
+          	email: 'nedim',
+          	password: 'test'
           };
 
           $scope.login = function() {

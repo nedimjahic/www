@@ -40,7 +40,7 @@ angular.module('SocialStreamApp')
                         });
                 },
                 getActiveTopic: function(){
-                    return $http.get('http://' + host +':3000/api/activetopic');
+                    return $http.get('http://' + host +':3000/api/stream/setactivetopic');
                 }
             };
         }
